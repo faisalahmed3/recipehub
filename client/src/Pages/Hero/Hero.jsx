@@ -62,14 +62,14 @@ const Hero = () => {
                 <div className="absolute left-4 right-4 top-1/2 z-30 flex -translate-y-1/2 justify-between">
                   <a
                     href={`#${prev}`}
-                    className="btn btn-circle border border-amber-300/30 bg-black/45 text-amber-50 hover:bg-black/70 hover:border-amber-300/60 backdrop-blur-md"
+                    className="btn btn-circle border rounded-lg border-amber-300/30 bg-black/45 text-amber-50 hover:bg-black/70 hover:border-amber-300/60 backdrop-blur-md"
                     aria-label="Previous"
                   >
                     <HiChevronLeft className="text-2xl" />
                   </a>
                   <a
                     href={`#${next}`}
-                    className="btn btn-circle border border-amber-300/30 bg-black/45 text-amber-50 hover:bg-black/70 hover:border-amber-300/60 backdrop-blur-md"
+                    className="btn btn-circle border rounded-lg border-amber-300/30 bg-black/45 text-amber-50 hover:bg-black/70 hover:border-amber-300/60 backdrop-blur-md"
                     aria-label="Next"
                   >
                     <HiChevronRight className="text-2xl" />
