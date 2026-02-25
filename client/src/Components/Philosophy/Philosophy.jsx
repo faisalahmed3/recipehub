@@ -24,7 +24,7 @@ const Philosophy = () => {
     <section className="px-4 sm:px-8 md:px-12 lg:px-20 py-16">
       <div className="text-center">
         <h1 className="raleway text-3xl sm:text-4xl md:text-5xl font-extrabold green">
-          The Savorly Way
+          The RecipeHub Way
         </h1>
         <p className="mt-3 text-amber-100/60">
           A premium approach to everyday cooking.
