@@ -5,7 +5,7 @@ import People from "../../Components/People/People";
 import Tips from "../../Components/Tips/Tips";
 import biryani from "../../assets/Biryani.png";
 import jalebi from "../../assets/jalebi.png";
-import tikka from "../../assets/tikka.png";
+import tikka from "../../assets/Tikka.png";
 import laddoo from "../../assets/laddoo.png";
 import Philosophy from "../../Components/Philosophy/Philosophy";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
