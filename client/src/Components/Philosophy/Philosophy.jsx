@@ -1,48 +1,61 @@
-import React from 'react';
+import React from "react";
 import { GiHeartBeats, GiHerbsBundle, GiKnifeThrust } from "react-icons/gi";
 
 const Philosophy = () => {
-    return (
-        <div className="px-4 sm:px-8 md:px-12 lg:px-20 py-16 ">
-            <h1 className="raleway text-center text-3xl sm:text-4xl md:text-5xl font-bold green mb-4">
-                The Savorly Way
-            </h1>
-            <div className="w-24 h-1 bg-amber-600 mx-auto mb-10 rounded-full"></div>
+  const items = [
+    {
+      icon: <GiKnifeThrust className="text-6xl text-amber-300/80" />,
+      title: "Simplicity",
+      desc: "Real kitchens. Real people. Clean steps and reliable results.",
+    },
+    {
+      icon: <GiHerbsBundle className="text-6xl text-amber-300/80" />,
+      title: "Freshness",
+      desc: "Ingredients-first recipes that keep natural flavors in the spotlight.",
+    },
+    {
+      icon: <GiHeartBeats className="text-6xl text-amber-300/80" />,
+      title: "Passion",
+      desc: "Cooking is love. We design every recipe for sharing and joy.",
+    },
+  ];
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {[
-                    {
-                        icon: <GiKnifeThrust className="text-5xl sm:text-6xl text-amber-600 transition-transform duration-300 group-hover:rotate-6" />,
-                        title: "Simplicity",
-                        desc: "Our recipes are made for real kitchens and real people—no fluff, no fuss.",
-                    },
-                    {
-                        icon: <GiHerbsBundle className="text-5xl sm:text-6xl text-amber-600 transition-transform duration-300 group-hover:rotate-6" />,
-                        title: "Freshness",
-                        desc: "We focus on wholesome ingredients and recipes that highlight natural flavors.",
-                    },
-                    {
-                        icon: <GiHeartBeats className="text-5xl sm:text-6xl text-amber-600 transition-transform duration-300 group-hover:rotate-6" />,
-                        title: "Passion",
-                        desc: "Cooking isn’t just a task—it’s love, shared on every plate.",
-                    },
-                ].map((item, i) => (
-                    <div
-                        key={i}
-                        className="group border-amber-600 border-4 rounded-3xl p-6 sm:p-7 md:p-9 text-center flex flex-col items-center gap-4  shadow-2xl hover:shadow-amber-700 transition-all duration-300"
-                    >
-                        {item.icon}
-                        <h2 className="raleway text-xl sm:text-2xl md:text-3xl font-bold">
-                            {item.title}
-                        </h2>
-                        <p className="text-base sm:text-lg lato text-gray-700">
-                            {item.desc}
-                        </p>
-                    </div>
-                ))}
+  return (
+    <section className="px-4 sm:px-8 md:px-12 lg:px-20 py-16">
+      <div className="text-center">
+        <h1 className="raleway text-3xl sm:text-4xl md:text-5xl font-extrabold green">
+          The Savorly Way
+        </h1>
+        <p className="mt-3 text-amber-100/60">
+          A premium approach to everyday cooking.
+        </p>
+        <div className="mt-6 mx-auto h-[2px] w-44 bg-gradient-to-r from-transparent via-amber-300/60 to-transparent" />
+      </div>
+
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {items.map((item, i) => (
+          <div
+            key={i}
+            className="group border border-amber-400/20 rounded-[28px]
+                       bg-black/30 backdrop-blur-xl p-8 text-center
+                       shadow-[0_25px_70px_rgba(0,0,0,0.65)]
+                       hover:shadow-[0_30px_95px_rgba(0,0,0,0.80)]
+                       transition"
+          >
+            <div className="mx-auto w-fit rounded-2xl p-4 bg-amber-300/10 border border-amber-300/15 group-hover:bg-amber-300/15 transition">
+              {item.icon}
             </div>
-        </div>
-    );
+            <h2 className="mt-6 raleway text-2xl md:text-3xl font-extrabold text-amber-50">
+              {item.title}
+            </h2>
+            <p className="mt-3 text-amber-100/65 leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default Philosophy;

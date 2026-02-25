@@ -1,53 +1,64 @@
-import React from 'react';
+import React from "react";
 import { GiCookingPot, GiSaltShaker, GiLemon, GiKnifeFork } from "react-icons/gi";
 
 const Tips = () => {
-    return (
-        <div className='mb-16 px-4 sm:px-8 md:px-12 lg:px-20 ivory-bg'>
-            <h1 className='raleway text-center text-3xl sm:text-4xl md:text-5xl font-bold green mb-10'>
-                Quick Tips to Cook Like a Pro
-            </h1>
+  const tips = [
+    {
+      icon: <GiCookingPot className="text-6xl text-amber-300/80" />,
+      title: "Always Preheat Your Pan",
+      desc: "Locks in flavor and gives you that perfect sear.",
+    },
+    {
+      icon: <GiSaltShaker className="text-6xl text-amber-300/80" />,
+      title: "Season As You Go",
+      desc: "Build flavor step by step, not at the end.",
+    },
+    {
+      icon: <GiLemon className="text-6xl text-amber-300/80" />,
+      title: "Balance Your Flavors",
+      desc: "A little acid (lemon/vinegar) lifts almost any dish.",
+    },
+    {
+      icon: <GiKnifeFork className="text-6xl text-amber-300/80" />,
+      title: "Let Garlic Rest",
+      desc: "Wait 10 minutes after chopping for best flavor and benefits.",
+    },
+  ];
 
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ivory-bg'>
-                <div className='border-amber-600 border-4 rounded-3xl p-6 sm:p-7 md:p-9 text-center flex flex-col justify-center items-center gap-4'>
-                    <GiCookingPot className='text-5xl sm:text-6xl text-amber-600' />
-                    <h2 className='text-xl sm:text-2xl md:text-3xl font-bold raleway'>
-                        Always Preheat Your Pan
-                    </h2>
-                    <p className='text-base sm:text-lg lato'>
-                        Helps lock in flavor and gives a perfect sear.
-                    </p>
-                </div>
-                <div className='border-amber-600 border-4 rounded-3xl p-6 sm:p-7 md:p-9 text-center flex flex-col justify-center items-center gap-4'>
-                    <GiSaltShaker className='text-5xl sm:text-6xl text-amber-600' />
-                    <h2 className='text-xl sm:text-2xl md:text-3xl font-bold raleway'>
-                        Season As You Go
-                    </h2>
-                    <p className='text-base sm:text-lg lato'>
-                        Don’t wait till the end—build flavor step by step.
-                    </p>
-                </div>
-                <div className='border-amber-600 border-4 rounded-3xl p-6 sm:p-7 md:p-9 text-center flex flex-col justify-center items-center gap-4'>
-                    <GiLemon className='text-5xl sm:text-6xl text-amber-600' />
-                    <h2 className='text-xl sm:text-2xl md:text-3xl font-bold raleway'>
-                        Balance Your Flavors
-                    </h2>
-                    <p className='text-base sm:text-lg lato'>
-                        A squeeze of lemon or a dash of vinegar can brighten almost any dish.
-                    </p>
-                </div>
-                <div className='border-amber-600 border-4 rounded-3xl p-6 sm:p-7 md:p-9 text-center flex flex-col justify-center items-center gap-4'>
-                    <GiKnifeFork className='text-5xl sm:text-6xl text-amber-600' />
-                    <h2 className='text-xl sm:text-2xl md:text-3xl font-bold raleway'>
-                        Let Garlic Rest After Chopping
-                    </h2>
-                    <p className='text-base sm:text-lg lato'>
-                        Waiting 10 minutes before cooking preserves its natural health benefits.
-                    </p>
-                </div>
+  return (
+    <section className="mb-16 px-4 sm:px-8 md:px-12 lg:px-20 py-12">
+      <div className="text-center">
+        <h1 className="raleway text-3xl sm:text-4xl md:text-5xl font-extrabold green">
+          Quick Tips to Cook Like a Pro
+        </h1>
+        <p className="mt-3 text-amber-100/60">
+          Small habits that make a big difference.
+        </p>
+        <div className="mt-6 mx-auto h-[2px] w-52 bg-gradient-to-r from-transparent via-amber-300/60 to-transparent" />
+      </div>
+
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
+        {tips.map((t, i) => (
+          <div
+            key={i}
+            className="border border-amber-400/20 rounded-[28px]
+                       bg-black/30 backdrop-blur-xl p-7 text-center
+                       shadow-[0_25px_70px_rgba(0,0,0,0.65)]
+                       hover:shadow-[0_30px_95px_rgba(0,0,0,0.80)]
+                       transition"
+          >
+            <div className="mx-auto w-fit rounded-2xl p-4 bg-amber-300/10 border border-amber-300/15">
+              {t.icon}
             </div>
-        </div>
-    );
+            <h2 className="mt-6 text-xl sm:text-2xl font-extrabold text-amber-50 raleway">
+              {t.title}
+            </h2>
+            <p className="mt-3 text-amber-100/65 leading-relaxed">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default Tips;
