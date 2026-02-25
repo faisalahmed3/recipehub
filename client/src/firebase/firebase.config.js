@@ -2,12 +2,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  apiKey: "AIzaSyAdEYoEpSGkEcupr-WFUcNOlM__qYdpiuk",
+  authDomain: "recipehub-80472.firebaseapp.com",
+  projectId: "recipehub-80472",
+  storageBucket: "recipehub-80472.firebasestorage.app",
+  messagingSenderId: "251168205960",
+  appId: "1:251168205960:web:eb6afa294fa2acedf0433d"
 };
 
 const app = initializeApp(firebaseConfig);

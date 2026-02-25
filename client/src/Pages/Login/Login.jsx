@@ -1,59 +1,125 @@
-import React, { useContext, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router';
-import { AuthContext } from '../../providers/AuthProvider';
+import React, { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
-    const { login } = useContext(AuthContext);
-    const [error, setError] = useState(null);
-    const location = useLocation();
-    const navigate = useNavigate();
-    const from = location.state?.from?.pathname || "/";
+  const { login } = useContext(AuthContext);
+  const [error, setError] = useState(null);
 
-    const handleLogin = (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const email = form.email.value;
-        const password = form.password.value;
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
 
-        login(email, password)
-            .then(() => {
-                navigate(from, { replace: true });
-            })
-            .catch(err => {
-                setError(err.message);
-            });
-    };
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
 
-    return (
-        <div className="hero ivory-bg min-h-screen raleway px-4 py-10 flex items-center justify-center">
-            <div className="hero-content flex-col lg:flex-row-reverse w-full max-w-5xl">
-                <div className="card bg-base-100 w-full max-w-sm shadow-2xl">
-                    <div className="card-body">
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold green mb-6 text-center lg:text-left">
-                            Login now!
-                        </h1>
-                        <form onSubmit={handleLogin} className="fieldset">
-                            <label className="label green">Email</label>
-                            <input type="email" name="email" className="input w-full" placeholder="Email" required />
+    const email = form.email.value;
+    const password = form.password.value;
 
-                            <label className="label green mt-4">Password</label>
-                            <input type="password" name="password" className="input w-full" placeholder="Password" required />
+    setError(null);
 
-                            {error && <p className="text-red-500 mt-2">{error}</p>}
+    login(email, password)
+      .then(() => navigate(from, { replace: true }))
+      .catch((err) => setError(err.message));
+  };
 
-                            <button type="submit" className="btn btn-neutral mt-6 golden-bg text-white w-full btn-hv">
-                                Login
-                            </button>
-                        </form>
+  return (
+    <div className="min-h-screen ivory-bg flex items-center justify-center px-4 py-12">
+      <div className="w-full max-w-md">
+        {/* Outer glow wrapper */}
+        <div className="relative">
+          <div className="absolute -inset-1 rounded-[28px] blur-2xl opacity-30 bg-gradient-to-r from-amber-200/30 via-amber-400/20 to-amber-200/30"></div>
 
-                        <p className="text-base md:text-lg mt-6 text-center">
-                            Don't have an account? <Link to="/register" className="text-amber-600 font-semibold hover:underline">Register Now!</Link>
-                        </p>
-                    </div>
+          <div className="relative card bg-base-100 shadow-2xl rounded-[28px] border border-amber-600/25 overflow-hidden">
+            {/* Top accent bar */}
+            <div className="h-[3px] w-full bg-gradient-to-r from-transparent via-amber-400/70 to-transparent"></div>
+
+            <div className="card-body p-8 sm:p-10">
+              {/* Title */}
+              <div className="text-center">
+                <p className="tracking-[0.25em] text-xs text-amber-200/80 uppercase mb-2">
+                  Welcome back
+                </p>
+                <h1 className="text-4xl sm:text-5xl font-bold green">
+                  Login
+                </h1>
+                <p className="mt-3 text-sm sm:text-base text-amber-100/70">
+                  Access your recipes and continue cooking like a pro.
+                </p>
+              </div>
+
+              {/* Divider */}
+              <div className="mt-7 mb-6 flex items-center gap-3">
+                <span className="h-px flex-1 bg-amber-600/20"></span>
+                <span className="text-amber-300/60 text-xs tracking-widest">
+                  SIGN IN
+                </span>
+                <span className="h-px flex-1 bg-amber-600/20"></span>
+              </div>
+
+              <form onSubmit={handleLogin} className="space-y-5">
+                <div>
+                  <label className="block mb-2 green font-medium">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="example@email.com"
+                    className="input w-full rounded-sm px-2.5"
+                    required
+                  />
                 </div>
+
+                <div>
+                  <label className="block mb-2 green font-medium">
+                    Password
+                  </label>
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="••••••••"
+                    className="input w-full rounded-sm px-2.5"
+                    
+                    required
+                  />
+                </div>
+
+                {error && (
+                  <div className="rounded-xl border border-red-500/25 bg-red-500/10 px-4 py-3">
+                    <p className="text-red-300 text-sm">{error}</p>
+                  </div>
+                )}
+
+                <button type="submit" className="btn golden-bg w-full btn-hv mt-2 rounded-sm">
+                  Login
+                </button>
+              </form>
+
+              {/* Bottom */}
+              <div className="mt-7 text-center">
+                <p className="text-sm text-amber-100/70">
+                  Don’t have an account?{" "}
+                  <Link
+                    to="/register"
+                    className="text-amber-300 font-semibold hover:underline"
+                  >
+                    Register Now
+                  </Link>
+                </p>
+              </div>
+
+              {/* Subtle footer note */}
+              <p className="mt-6 text-center text-xs text-amber-100/50">
+                RecipeHub • Where every dish tells a story
+              </p>
             </div>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Login;

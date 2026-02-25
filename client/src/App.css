@@ -1,34 +1,222 @@
-@import "tailwindcss";
-@plugin "daisyui";
+/* =========================
+   SAVORLY LUXURY DARK THEME (FINAL CLEAN)
+   ========================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+:root{
+  --lux-bg: #050505;
+  --lux-bg-2: #0b0b0b;
 
+  --lux-gold: #d6c18a;
+  --lux-gold-2: #bfa869;
 
-.raleway{
-  font-family: "Raleway", sans-serif;
+  --lux-text: #f4f1e8;
+  --lux-muted: rgba(244,241,232,0.72);
 }
-.lato{
-  font-family: "Lato", sans-serif;
+
+/* =========================
+   PAGE BACKGROUND
+   ========================= */
+
+body{
+  background:
+    radial-gradient(circle at 20% 20%, rgba(214,193,138,0.08), transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(214,193,138,0.06), transparent 45%),
+    linear-gradient(180deg, var(--lux-bg), var(--lux-bg-2));
+  color: var(--lux-text);
 }
 
+/* Sections surface */
+.ivory-bg{
+  background: linear-gradient(180deg, rgba(5,5,5,0.92), rgba(5,5,5,0.88)) !important;
+}
+
+/* =========================
+   TEXT
+   ========================= */
 
 .green{
-    color: #2F5D50;
-}
-.ivory-bg{
-    background-color: #FAF8F2;
-}
-.golden-bg{
-    background-color: #D9A441;
+  color: var(--lux-text) !important;
 }
 
-.text:hover{
-    background-color: #A3C9A8;
+h1, h2{
+  color: var(--lux-text) !important;
+  text-shadow: 0 0 18px rgba(214,193,138,0.12);
+}
+
+p{
+  color: var(--lux-muted);
+}
+
+.text-gray-700{
+  color: var(--lux-muted) !important;
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.fixed.top-0{
+  background: rgba(5,5,5,0.85) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(214,193,138,0.25);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+}
+
+/* Force horizontal navbar menu */
+.navbar{
+  flex-wrap: nowrap !important;
+}
+
+.menu.menu-horizontal{
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+}
+
+.menu.menu-horizontal > li{
+  display: inline-flex !important;
+}
+
+.menu.menu-horizontal > li > a{
+  white-space: nowrap !important;
+}
+
+/* Navbar links */
+.menu a{
+  color: var(--lux-text) !important;
+}
+
+.menu a:hover{
+  color: var(--lux-gold) !important;
+  background: rgba(214,193,138,0.08) !important;
+}
+
+/* Mobile dropdown */
+.dropdown-content{
+  background: rgba(10,10,10,0.95) !important;
+  border: 1px solid rgba(214,193,138,0.25) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.golden-bg{
+  background: linear-gradient(135deg, var(--lux-gold), var(--lux-gold-2)) !important;
+  color: #111 !important;
+  border: 1px solid rgba(214,193,138,0.7) !important;
+  box-shadow: 0 10px 25px rgba(214,193,138,0.15);
 }
 
 .btn-hv:hover{
-    background-color: white;
-    color: #E07A5F;
-    border-color: #E07A5F;
+  background: linear-gradient(135deg, #ead9a6, var(--lux-gold)) !important;
+  color: #111 !important;
+  transform: translateY(-2px);
+  transition: 0.25s ease;
+}
+
+/* =========================
+   CARDS
+   ========================= */
+
+.border-2,
+.border-4{
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015)) !important;
+  border-color: rgba(214,193,138,0.55) !important;
+  box-shadow: 0 20px 55px rgba(0,0,0,0.65) !important;
+}
+
+.bg-white{
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)) !important;
+  color: var(--lux-text) !important;
+}
+
+.text-amber-600{
+  color: var(--lux-gold) !important;
+}
+
+.w-24.h-1{
+  background: linear-gradient(90deg, transparent, var(--lux-gold), transparent) !important;
+}
+
+/* =========================
+   HERO CAROUSEL
+   ========================= */
+
+/* Restore DaisyUI behavior */
+.carousel{
+  display: flex !important;
+  scroll-snap-type: x mandatory !important;
+
+  /* Hide scrollbar but keep functionality */
+  overflow-x: auto !important;
+  scrollbar-width: none; /* Firefox */
+}
+
+.carousel::-webkit-scrollbar{
+  display: none; /* Chrome/Safari */
+}
+
+.carousel-item{
+  flex: 0 0 100% !important;
+  scroll-snap-align: start !important;
+  position: relative;
+}
+
+/* Dark overlay for luxury look */
+.carousel-item::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  pointer-events: none;
+}
+
+/* Carousel arrows */
+.btn-circle{
+  background: rgba(5,5,5,0.55) !important;
+  color: var(--lux-text) !important;
+  border: 1px solid rgba(214,193,138,0.35) !important;
+}
+
+.btn-circle:hover{
+  border-color: rgba(214,193,138,0.8) !important;
+  background: rgba(5,5,5,0.75) !important;
+}
+
+/* =========================
+   FIX: Forms + cards in dark theme
+   ========================= */
+
+/* Make cards readable on dark background */
+.card.bg-base-100{
+  background: rgba(10,10,10,0.92) !important;
+  border: 1px solid rgba(214,193,138,0.28) !important;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.75) !important;
+}
+
+/* Inputs: visible surface + border + text */
+.input{
+  background: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(214,193,138,0.22) !important;
+  color: var(--lux-text) !important;
+}
+
+.input::placeholder{
+  color: rgba(244,241,232,0.55) !important;
+}
+
+/* Focus ring */
+.input:focus{
+  outline: none !important;
+  border-color: rgba(214,193,138,0.55) !important;
+  box-shadow: 0 0 0 3px rgba(214,193,138,0.12) !important;
+}
+
+/* Labels should be readable */
+.label{
+  color: var(--lux-text) !important;
 }
