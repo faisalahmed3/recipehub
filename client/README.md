@@ -1,12 +1,12 @@
-# 🥗 Savorly - Client (Frontend)
+# 🥗 Recipehub - Client (Frontend)
 
-Welcome to the **Savorly** frontend! This is a modern and responsive recipe web app built with **React**, **Tailwind CSS**, and **React Router**. Users can view, add, edit, like, and manage their favorite recipes.
+Welcome to the **Recipehub** frontend! This is a modern and responsive recipe web app built with **React**, **Tailwind CSS**, and **React Router**. Users can view, add, edit, like, and manage their favorite recipes.
 
 ---
 
 ## 🌍 Live Link
 
-👉 **[Visit Savorly Live](https://savorly-faisal-ahmed.netlify.app/)**
+👉 **[Visit Recipehub Live](https://recipehub-inspiration.vercel.app/)**
 
 ---
 
