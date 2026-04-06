@@ -1,6 +1,6 @@
-# 🍽️ Savorly - Server (Backend)
+# 🍽️ Recipehub - Server (Backend)
 
-Welcome to the backend of **Savorly**, a modern recipe management web app. This Express.js server provides RESTful APIs for recipe creation, editing, deletion, and likes, with MongoDB as the database.
+Welcome to the backend of **Recipehub**, a modern recipe management web app. This Express.js server provides RESTful APIs for recipe creation, editing, deletion, and likes, with MongoDB as the database.
 
 ---
 

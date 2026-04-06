@@ -28,7 +28,7 @@ async function run() {
     const recipesCollection = database.collection("recipes");
 
     // Health check
-    app.get('/', (req, res) => res.send('Savorly Server is getting Hotter.'));
+    app.get('/', (req, res) => res.send('RecipeHub Server is getting Hotter.'));
 
     // Get all recipes
     app.get('/recipes', async (req, res) => {
@@ -172,5 +172,5 @@ run().catch(console.dir);
 
 // Start server
 app.listen(port, () => {
-  console.log(`Savorly server is running on port ${port}`);
+  console.log(`RecipeHub server is running on port ${port}`);
 });
